@@ -8,6 +8,7 @@ import { useEmblaCarousel } from "embla-carousel/react";
 
 const TrendContainer = tw.div`
     w-full
+    overflow-y: hidden;
 `;
 
 const ButtonContainer = tw.div`
@@ -38,6 +39,7 @@ const TrendButton = tw.div`
 const TrendSlickContainer = tw.div`
     grid
     grid-cols-5
+    gap-x-2
 
     xl:grid-cols-5
     xl:gap-x-4
@@ -62,6 +64,24 @@ const ImageSliderContainer = tw.div`
     items-center
 `;
 
+const ImageItem = tw.div`
+    flex
+    flex-col
+    text-white
+    font-semibold
+    text-xs
+
+    xl:text-sm
+`;
+
+const ImageContent = tw.h4`
+    text-xs
+    text-white
+    mt-4
+
+
+    xl:text-sm
+`;
 export const Trending = () => {
   const [slides, setSlides] = useState(Novels);
   const [startIndex, setStartIndex] = useState<number>(1);
@@ -88,17 +108,19 @@ export const Trending = () => {
               }
             }}
           />
-          <TrendSlickContainer>
+          <TrendSlickContainer className={`${animate === true ? "" : ""}`}>
             {slides.map((slide) => {
               if (slide.Id >= startIndex && slide.Id <= endIndex)
                 return (
-                  <Image
-                    key={slide.Id}
-                    src={slide.Thumbnail}
-                    width={230}
-                    height={305}
-                    alt="/"
-                  />
+                  <ImageItem key={slide.Id}>
+                    <Image
+                      src={slide.Thumbnail}
+                      width={230}
+                      height={305}
+                      alt="/"
+                    />
+                    <ImageContent>{slide.Name}</ImageContent>
+                  </ImageItem>
                 );
             })}
           </TrendSlickContainer>

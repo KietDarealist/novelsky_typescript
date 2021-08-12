@@ -8,6 +8,7 @@ import {
   EyeIcon,
   ArrowRightIcon,
 } from "@heroicons/react/outline";
+import styles from "../styles/Home.module.css";
 
 //Import Image
 import Thumbnail1 from "../images/Thumbnail1.png";
@@ -57,7 +58,7 @@ export const Novels: NovelType[] = [
   },
   {
     Id: 2,
-    Name: "Genius Mage in a Cultivation World",
+    Name: "Rebirth Of The Strongest Celestial ",
     Description:
       "Layns life was relative simple. Married to a princess, working as the top of the country...Everything would be greate if he never learned that his wife was actually cheating on him!\n Instead of gettings his revenge, he put up with the humilination. For three long years. Three long years... ",
     Thumbnail: Thumbnail2,
@@ -80,7 +81,7 @@ export const Novels: NovelType[] = [
   },
   {
     Id: 3,
-    Name: "Genius Mage in a Cultivation World",
+    Name: "Unlimited Power - The Arcane Path",
     Description:
       "Layns life was relative simple. Married to a princess, working as the top of the country...Everything would be greate if he never learned that his wife was actually cheating on him!\n Instead of gettings his revenge, he put up with the humilination. For three long years. Three long years... ",
     Thumbnail: Thumbnail3,
@@ -103,7 +104,7 @@ export const Novels: NovelType[] = [
   },
   {
     Id: 4,
-    Name: "Genius Mage in a Cultivation World",
+    Name: "Unlimited Power 02 - The Ranger's Domain",
     Description:
       "Layns life was relative simple. Married to a princess, working as the top of the country...Everything would be greate if he never learned that his wife was actually cheating on him!\n Instead of gettings his revenge, he put up with the humilination. For three long years. Three long years... ",
     Thumbnail: Thumbnail4,
@@ -126,7 +127,7 @@ export const Novels: NovelType[] = [
   },
   {
     Id: 5,
-    Name: "Genius Mage in a Cultivation World",
+    Name: "Second World",
     Description:
       "Layns life was relative simple. Married to a princess, working as the top of the country...Everything would be greate if he never learned that his wife was actually cheating on him!\n Instead of gettings his revenge, he put up with the humilination. For three long years. Three long years... ",
     Thumbnail: Thumbnail5,
@@ -197,8 +198,6 @@ const BannerContent = tw.div`
 
 
     xl:w-1/2
-
-
 `;
 
 const BannerName = tw.h1`
@@ -209,6 +208,7 @@ const BannerName = tw.h1`
     xl:font-semibold
     xl:text-3xl
     xl:text-left
+    xl:block
 
 `;
 const BannerViewsContainer = tw.div`
@@ -239,8 +239,8 @@ const BannerViewsContent = tw.p`
 `;
 
 const GenreButton = tw.button`
-  bg-red-900
-  text-red-600
+  bg-darkRed
+  text-lightRed
     rounded-xl
     px-1
     py-1
@@ -292,8 +292,8 @@ const ReadButton = tw.button`
     md:mt-4
     md:text-xs
     md:items-center
-  md:bg-red-700
-  md:text-white
+    md:bg-orange
+    md:text-white
     md:font-semibold
     md:rounded-3xl
 
@@ -313,21 +313,20 @@ const ThumbnailContainer = tw.div`
     grid-cols-5
     px-8
     mx-auto
+    gap-x-1
 
     md:px-20
     xl:px-20
     xl:w-5/6
+    xl:gap-x-4
 
 `;
 const ThumbnailItem = tw.div`
-    w-5/6
-    h-full
+    flex
     cursor-pointer
-    object-contain
+    object-cover
+    h-full
 
-
-    xl:w-44
-    xl:h-36
     
 `;
 
@@ -379,56 +378,22 @@ const Banner = () => {
       </BannerContainer>
 
       <ThumbnailContainer>
-        <ThumbnailItem>
-          <Image
-            src={Thumbnail1}
-            width={160}
-            objectFit="fill"
-            height={100}
-            alt="/"
-            className="blur-xl"
-          />
-        </ThumbnailItem>
-        <ThumbnailItem>
-          <Image
-            src={Thumbnail2}
-            width={160}
-            objectFit="fill"
-            height={100}
-            alt="/"
-            className="blur-xl"
-          />
-        </ThumbnailItem>
-        <ThumbnailItem>
-          <Image
-            src={Thumbnail3}
-            width={160}
-            objectFit="fill"
-            height={100}
-            alt="/"
-            className="blur-xl"
-          />
-        </ThumbnailItem>
-        <ThumbnailItem>
-          <Image
-            src={Thumbnail4}
-            width={160}
-            objectFit="fill"
-            height={100}
-            alt="/"
-            className="blur-xl"
-          />
-        </ThumbnailItem>
-        <ThumbnailItem>
-          <Image
-            src={Thumbnail5}
-            width={160}
-            objectFit="fill"
-            height={100}
-            alt="/"
-            className="blur-xl"
-          />
-        </ThumbnailItem>
+        {Novels.map((novel) => {
+          if (novel.Id > 1) {
+            return (
+              <ThumbnailItem>
+                <Image
+                  key={novel.Id}
+                  src={novel.Thumbnail}
+                  width={130}
+                  height={300}
+                  alt="/"
+                  objectFit="contain"
+                />
+              </ThumbnailItem>
+            );
+          }
+        })}
       </ThumbnailContainer>
     </>
   );

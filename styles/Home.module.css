@@ -29,7 +29,11 @@
 
 .main {
   background: #3f3f3f;
-  height: 1300px;
+  height: fit-content;
+}
+
+.bgorange {
+  background-color: rgba(250, 49, 9, 0.75);
 }
 
 @media only screen and (max-width: 800px) {

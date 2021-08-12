@@ -5,6 +5,7 @@ import tw from "tailwind-styled-components";
 import styled from "styled-components";
 import type { AppProps } from "next/app";
 import Logo from "../images/NovelSky.png";
+import Infinite from "../components/Infinite";
 import {
   SearchIcon,
   ArrowDownIcon,
@@ -16,6 +17,7 @@ import Banner from "../components/Banner";
 import Ham from "../images/Hambuger.png";
 import { useState } from "react";
 import Trending from "../components/Trending";
+import Footer from "../components/Footer";
 const HeadContainer = tw.div`
   h-full
   bg-black
@@ -89,15 +91,15 @@ const NavItem = tw.div`
 `;
 
 const LoginButton = tw.button`
-  px-4
+  px-
   py-2
-  bg-transparent
+  bg-line
   text-white
-  border-2
-  border-white
-  rounded-lg
+  rounded-md
   w-24
-  hover:bg-red-600
+  
+  hover:bg-gray-700
+
 `;
 
 const LogOutButton = tw.button`
@@ -105,8 +107,9 @@ const LogOutButton = tw.button`
   py-2
   bg-transparent
   text-white
-  bg-red-500
-  rounded-lg
+  bg-orange
+  hover:bg-red-600
+  rounded-md
   w-24
 `;
 
@@ -144,7 +147,7 @@ export default function Home() {
               <MobileContainer>
                 <Image
                   src={Ham}
-                  className="flex lg:hidden"
+                  className="flex lg:hidden cursor-pointer"
                   width={26}
                   height={26}
                   alt="/"
@@ -189,6 +192,7 @@ export default function Home() {
                   <XIcon className="h-4 text-white text-sm hover:text-red-500" />
                 </NavItem>
               </HamMenu>
+
               {/*For Desktop*/}
               <HeaderLeft>
                 <Image src={Logo} width={144} height={40} alt="/" />
@@ -226,7 +230,11 @@ export default function Home() {
           <BodyContainer>
             <Trending />
           </BodyContainer>
+
+          <Infinite />
         </HeadContainer>
+
+        <Footer />
       </main>
     </>
   );
