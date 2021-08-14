@@ -1,6 +1,6 @@
 import React from "react";
 import tw from "tailwind-styled-components";
-import { Novels } from "./Banner";
+import { Novels } from "../lib/store";
 import Image from "next/image";
 
 const MainContainer = tw.div`

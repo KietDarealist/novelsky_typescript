@@ -3,7 +3,7 @@ import tw from "tailwind-styled-components";
 import Image from "next/image";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import { useState } from "react";
-import { Novels } from "./Banner";
+import { Novels } from "../lib/store";
 import { useEmblaCarousel } from "embla-carousel/react";
 
 const TrendContainer = tw.div`
@@ -15,8 +15,8 @@ const ButtonContainer = tw.div`
     flex
     px-4
 
-    md:px-10
-    lg:px-20
+    md:px-16
+    lg:px-12
     xl:px-36
 `;
 
@@ -57,6 +57,7 @@ const SliderContainer = tw.div`
 
 
     xl:px-24
+    
 `;
 
 const ImageSliderContainer = tw.div`
@@ -70,8 +71,11 @@ const ImageItem = tw.div`
     text-white
     font-semibold
     text-xs
+    h-44
 
+    md:h-52
     xl:text-sm
+    xl:h-80
 `;
 
 const ImageContent = tw.h4`
@@ -127,7 +131,7 @@ export const Trending = () => {
           <ChevronRightIcon
             className="text-white font-semibold h-10 cursor-pointer ml-2"
             onClick={() => {
-              if (startIndex <= slides.length - 1) {
+              if (startIndex <= slides.length - 2) {
                 setStartIndex(startIndex + 1);
                 setEndIndex(endIndex + 1);
                 setAnimate(true);

@@ -3,7 +3,6 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import tw from "tailwind-styled-components";
 import styled from "styled-components";
-import type { AppProps } from "next/app";
 import Logo from "../images/NovelSky.png";
 import Infinite from "../components/Infinite";
 import {
@@ -18,24 +17,20 @@ import Ham from "../images/Hambuger.png";
 import { useState } from "react";
 import Trending from "../components/Trending";
 import Footer from "../components/Footer";
-const HeadContainer = tw.div`
+
+export const MainContainer = tw.div`
   h-full
   bg-black
   w-full
-  
 
 `;
 
-const BannerContainer = tw.div`
-  px-2
+export const HeroSection = tw.div`
   w-full
   py-5
-
-  lg:px-36
-
 `;
 
-const HamMenu = tw.div`
+export const HamMenu = tw.div`
   absolute
   top-0
   bottom-0
@@ -50,12 +45,20 @@ const HamMenu = tw.div`
 
   lg:hidden
 `;
-const Header = tw.div`
+export const Header = tw.div`
   flex
   items-center
   justify-between
+
+  px-4
+
+  md:px-10
+
+  lg:px-16
+
+  xl:px-36
 `;
-const HeaderLeft = tw.div`
+export const HeaderLeft = tw.div`
 
   hidden
   items-center
@@ -67,7 +70,7 @@ const HeaderLeft = tw.div`
   xl:w-1/3
 `;
 
-const HeaderRight = tw.div`
+export const HeaderRight = tw.div`
   hidden
   items-center
   justify-between
@@ -81,7 +84,7 @@ const HeaderRight = tw.div`
   2xl:w-1/4
 `;
 
-const NavItem = tw.div`
+export const NavItem = tw.div`
   flex
   items-center
   text-white;
@@ -90,7 +93,7 @@ const NavItem = tw.div`
   cursor-pointer
 `;
 
-const LoginButton = tw.button`
+export const LoginButton = tw.button`
   px-
   py-2
   bg-line
@@ -102,10 +105,10 @@ const LoginButton = tw.button`
 
 `;
 
-const LogOutButton = tw.button`
+export const LogOutButton = tw.button`
   px-4
   py-2
-  bg-transparent
+
   text-white
   bg-orange
   hover:bg-red-600
@@ -113,7 +116,7 @@ const LogOutButton = tw.button`
   w-24
 `;
 
-const MobileContainer = tw.div`
+export const MobileContainer = tw.div`
   flex
   w-3/5
   justify-between
@@ -141,9 +144,13 @@ export default function Home() {
         <title>My Next App</title>
       </Head>
       <main>
-        <HeadContainer className={styles.main}>
-          <BannerContainer className={styles.maincontain}>
+        {/*Whole Container for HomePage*/}
+        <MainContainer className={styles.main}>
+          {/*Container including header and banner*/}
+          <HeroSection className={styles.maincontain}>
+            {/*HeaderContainer*/}
             <Header>
+              {/*For  Mobile*/}
               <MobileContainer>
                 <Image
                   src={Ham}
@@ -194,6 +201,8 @@ export default function Home() {
               </HamMenu>
 
               {/*For Desktop*/}
+
+              {/*Letf of Header*/}
               <HeaderLeft>
                 <Image src={Logo} width={144} height={40} alt="/" />
                 <NavItem>
@@ -208,6 +217,7 @@ export default function Home() {
                 </NavItem>
               </HeaderLeft>
 
+              {/*Right of Header*/}
               <HeaderRight>
                 <NavItem>
                   <p className="text-sm font-semibold text-white">Thể loại</p>
@@ -224,16 +234,12 @@ export default function Home() {
               </HeaderRight>
             </Header>
 
+            {/*Adding Banner Component*/}
             <Banner />
-          </BannerContainer>
-
-          <BodyContainer>
-            <Trending />
-          </BodyContainer>
-
+          </HeroSection>
+          <Trending />
           <Infinite />
-        </HeadContainer>
-
+        </MainContainer>
         <Footer />
       </main>
     </>

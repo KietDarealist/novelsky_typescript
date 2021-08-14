@@ -11,9 +11,7 @@ const FooterContainer = tw.div`
     bg-black
     pt-10
     pb-10
-    px-4
 
-    xl:px-36
 `;
 
 const ContentContainer = tw.div`
@@ -39,6 +37,7 @@ const FooterContent = tw.div`
     items-center
     text-center
     mt-2
+ 
 
     xl:flex
     xl:justify-between
@@ -65,6 +64,7 @@ const FooterContentItem = tw.h3`
     font-semibold
     block
     min-w-max
+    mr-2
 
 
     xl:flex

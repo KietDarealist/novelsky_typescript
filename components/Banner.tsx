@@ -9,171 +9,9 @@ import {
   ArrowRightIcon,
 } from "@heroicons/react/outline";
 import styles from "../styles/Home.module.css";
-
-//Import Image
-import Thumbnail1 from "../images/Thumbnail1.png";
-import Thumbnail2 from "../images/Thumbnail2.png";
-import Thumbnail3 from "../images/Thumbnail3.png";
-import Thumbnail4 from "../images/Thumbnail4.png";
-import Thumbnail5 from "../images/Thumbnail5.png";
-
-export interface Genre {
-  Id: number;
-  Text: string;
-}
-
-export interface NovelType {
-  Id: number;
-  Name: string;
-  Description: string;
-  Thumbnail: StaticImageData;
-  Views: number;
-  Chapter: number;
-  Genres: Genre[];
-}
-
-export const Novels: NovelType[] = [
-  {
-    Id: 1,
-    Name: "Genius Mage in a Cultivation World",
-    Description:
-      "Layns life was relative simple. Married to a princess, working as the top of the country...Everything would be greate if he never learned that his wife was actually cheating on him!\n Instead of gettings his revenge, he put up with the humilination. For three long years. Three long years... ",
-    Thumbnail: Thumbnail,
-    Views: 1000,
-    Chapter: 12,
-    Genres: [
-      {
-        Id: 1,
-        Text: "Drama",
-      },
-      {
-        Id: 2,
-        Text: "Fanstatic",
-      },
-      {
-        Id: 3,
-        Text: "Romance",
-      },
-    ],
-  },
-  {
-    Id: 2,
-    Name: "Rebirth Of The Strongest Celestial ",
-    Description:
-      "Layns life was relative simple. Married to a princess, working as the top of the country...Everything would be greate if he never learned that his wife was actually cheating on him!\n Instead of gettings his revenge, he put up with the humilination. For three long years. Three long years... ",
-    Thumbnail: Thumbnail2,
-    Views: 1000,
-    Chapter: 12,
-    Genres: [
-      {
-        Id: 1,
-        Text: "Drama",
-      },
-      {
-        Id: 2,
-        Text: "Fanstatic",
-      },
-      {
-        Id: 3,
-        Text: "Romance",
-      },
-    ],
-  },
-  {
-    Id: 3,
-    Name: "Unlimited Power - The Arcane Path",
-    Description:
-      "Layns life was relative simple. Married to a princess, working as the top of the country...Everything would be greate if he never learned that his wife was actually cheating on him!\n Instead of gettings his revenge, he put up with the humilination. For three long years. Three long years... ",
-    Thumbnail: Thumbnail3,
-    Views: 1000,
-    Chapter: 12,
-    Genres: [
-      {
-        Id: 1,
-        Text: "Drama",
-      },
-      {
-        Id: 2,
-        Text: "Fanstatic",
-      },
-      {
-        Id: 3,
-        Text: "Romance",
-      },
-    ],
-  },
-  {
-    Id: 4,
-    Name: "Unlimited Power 02 - The Ranger's Domain",
-    Description:
-      "Layns life was relative simple. Married to a princess, working as the top of the country...Everything would be greate if he never learned that his wife was actually cheating on him!\n Instead of gettings his revenge, he put up with the humilination. For three long years. Three long years... ",
-    Thumbnail: Thumbnail4,
-    Views: 1000,
-    Chapter: 12,
-    Genres: [
-      {
-        Id: 1,
-        Text: "Drama",
-      },
-      {
-        Id: 2,
-        Text: "Fanstatic",
-      },
-      {
-        Id: 3,
-        Text: "Romance",
-      },
-    ],
-  },
-  {
-    Id: 5,
-    Name: "Second World",
-    Description:
-      "Layns life was relative simple. Married to a princess, working as the top of the country...Everything would be greate if he never learned that his wife was actually cheating on him!\n Instead of gettings his revenge, he put up with the humilination. For three long years. Three long years... ",
-    Thumbnail: Thumbnail5,
-    Views: 1000,
-    Chapter: 12,
-    Genres: [
-      {
-        Id: 1,
-        Text: "Drama",
-      },
-      {
-        Id: 2,
-        Text: "Fanstatic",
-      },
-      {
-        Id: 3,
-        Text: "Romance",
-      },
-    ],
-  },
-  {
-    Id: 6,
-    Name: "Genius Mage in a Cultivation World",
-    Description:
-      "Layns life was relative simple. Married to a princess, working as the top of the country...Everything would be greate if he never learned that his wife was actually cheating on him!\n Instead of gettings his revenge, he put up with the humilination. For three long years. Three long years... ",
-    Thumbnail: Thumbnail1,
-    Views: 1000,
-    Chapter: 12,
-    Genres: [
-      {
-        Id: 1,
-        Text: "Drama",
-      },
-      {
-        Id: 2,
-        Text: "Fanstatic",
-      },
-      {
-        Id: 3,
-        Text: "Romance",
-      },
-    ],
-  },
-];
-
-const BannerContainer = tw.div`
+import Link from "next/link";
+import { Genre, NovelType, Novels } from "../lib/store";
+export const BannerChildContainer = tw.div`
     flex
     flex-col
     items-center
@@ -191,7 +29,7 @@ const BannerContainer = tw.div`
     xl:px-20
 `;
 
-const BannerContent = tw.div`
+export const BannerContent = tw.div`
 
     w-5/6
     mx-auto
@@ -200,7 +38,7 @@ const BannerContent = tw.div`
     xl:w-1/2
 `;
 
-const BannerName = tw.h1`
+export const BannerName = tw.h1`
     hidden
 
 
@@ -211,7 +49,7 @@ const BannerName = tw.h1`
     xl:block
 
 `;
-const BannerViewsContainer = tw.div`
+export const BannerViewsContainer = tw.div`
     flex
     items-center
     justify-between
@@ -224,12 +62,12 @@ const BannerViewsContainer = tw.div`
     xl:w-2/3
 `;
 
-const BannerViewsItem = tw.div`
+export const BannerViewsItem = tw.div`
     flex
     items-center
 `;
 
-const BannerViewsContent = tw.p`
+export const BannerViewsContent = tw.p`
   text-white
     font-semibold
     text-xs
@@ -238,7 +76,7 @@ const BannerViewsContent = tw.p`
 
 `;
 
-const GenreButton = tw.button`
+export const GenreButton = tw.button`
   bg-darkRed
   text-lightRed
     rounded-xl
@@ -254,7 +92,7 @@ const GenreButton = tw.button`
     xl:px-2
 `;
 
-const GenreContainer = tw.div`
+export const GenreContainer = tw.div`
     hidden
 
 
@@ -272,19 +110,28 @@ const GenreContainer = tw.div`
 
 `;
 
-const DescritionContainer = tw.h3`
-    mt-4
+export const DescriptionContainer = tw.h3`
+    mt-2
     text-gray-100
     text-xs
     break-words
 
 
     xl:text-sm
-    xl:mt-10
+    xl:mt-6
 `;
 
-const ReadButton = tw.button`
-    hidden
+export const ReadButton = tw.button`
+  flex
+  px-2
+  py-1
+  mt-4
+  text-xs
+  items-center
+bg-orange
+text-white
+  font-semibold
+  rounded-3xl
 
     md:flex
     md:px-2
@@ -302,7 +149,6 @@ const ReadButton = tw.button`
     xl:py-2
     xl:mt-10
     xl:text-sm
-    xl:w-32
 
 
 `;
@@ -316,9 +162,11 @@ const ThumbnailContainer = tw.div`
     gap-x-1
 
     md:px-20
+    md:gap-x-4
     xl:px-20
     xl:w-5/6
     xl:gap-x-4
+    xl:mt-16
 
 `;
 const ThumbnailItem = tw.div`
@@ -327,17 +175,23 @@ const ThumbnailItem = tw.div`
     object-cover
     h-full
 
+    lg:w-max
+    xl:w-max
+
+
     
 `;
 
 const Banner = () => {
   const [data, setData] = useState(Novels);
-  const [index, setIndex] = useState<number>();
+  const [index, setIndex] = useState<number>(0);
+  const [status, setStatus] = useState<number>(0);
+
   return (
     <>
-      <BannerContainer>
+      <BannerChildContainer>
         <Image
-          src={data[0].Thumbnail}
+          src={data[index].Thumbnail}
           width={338}
           objectFit="contain"
           height={450}
@@ -345,50 +199,60 @@ const Banner = () => {
         />
         <BannerContent>
           {/* Name of the Novel */}
-          <BannerName>{data[0].Name}</BannerName>
+          <BannerName>{data[index].Name}</BannerName>
 
           {/*Amount Chapters and Views*/}
           <BannerViewsContainer>
             <BannerViewsItem>
               <DocumentTextIcon className="h-5 mr-1 text-white" />
-              <BannerViewsContent>{data[0].Chapter} Chương</BannerViewsContent>
+              <BannerViewsContent>
+                {data[index].Chapter} Chương
+              </BannerViewsContent>
             </BannerViewsItem>
             <BannerViewsItem>
               <EyeIcon className="h-5 mr-1 text-white" />
-              <BannerViewsContent>{data[0].Views} Lượt xem</BannerViewsContent>
+              <BannerViewsContent>
+                {data[index].Views} Lượt xem
+              </BannerViewsContent>
             </BannerViewsItem>
           </BannerViewsContainer>
 
           {/*Genres*/}
 
           <GenreContainer>
-            {data[0].Genres.map((genre) => {
+            {data[index].Genres.map((genre) => {
               return <GenreButton key={genre.Id}>{genre.Text}</GenreButton>;
             })}
           </GenreContainer>
 
           {/*Description*/}
-          <DescritionContainer>{data[0].Description}</DescritionContainer>
-
-          <ReadButton>
-            Đọc ngay
-            <ArrowRightIcon className="ml-2 h-5 font-semibold" />
-          </ReadButton>
+          <DescriptionContainer>{data[index].Description}</DescriptionContainer>
+          <Link href={`/detail/${data[index].Id}`} passHref>
+            <ReadButton>
+              Đọc ngay
+              <ArrowRightIcon className="ml-2 h-5 font-semibold" />
+            </ReadButton>
+          </Link>
         </BannerContent>
-      </BannerContainer>
+      </BannerChildContainer>
 
       <ThumbnailContainer>
         {Novels.map((novel) => {
-          if (novel.Id > 1) {
+          if (novel.Id > 0) {
             return (
-              <ThumbnailItem>
+              <ThumbnailItem
+                className={`${
+                  novel.Id === index ? "border-b-4 border-orange" : ""
+                }`}
+              >
                 <Image
                   key={novel.Id}
                   src={novel.Thumbnail}
-                  width={130}
-                  height={300}
+                  width={120}
+                  height={170}
                   alt="/"
                   objectFit="contain"
+                  onClick={() => setIndex(novel.Id)}
                 />
               </ThumbnailItem>
             );
