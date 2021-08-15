@@ -414,7 +414,7 @@ export const Novels: NovelType[] = [
     Id: 3,
     Name: "Unlimited Power 02 - The Ranger's Domain",
     Description:
-      "After losing his parents in a car accident, Ryan immediately caught his fiancee cheating on him with his best friend. In just a few days, he lost everything he loved, so Ryan decided to buy a house in the mountains to process all those events. However, something happened before he could even enter his new home: the end of the world.Monsters began to appear out of nowhere, and dragons began to dominate the skies. After losing everything, Ryan, who had lost his sense of reality, found new goals with the world in that state: survive and get stronger. Dungeons, classes, monsters, skills, the chance to obtain the DNA of other monsters... Ryan was decided to use them all because he no longer would become a spectator in his own life. Maybe with power, he won't lose anything anymore.",
+      "After losing his parents in a car accident, Ryan immediately caught his fiancee cheating on him with his best friend. In just a few days, he lost everything he loved, so Ryan decided to buy a house in the mountains to process all those events. However, something happened before he could even enter his new home: the end of the world.Monsters began to appear out of nowhere, and dragons began to dominate the skies. ",
     Thumbnail: Thumbnail4,
     Views: 4239,
     Chapter: 20,
@@ -530,7 +530,7 @@ export const Novels: NovelType[] = [
     Views: 1639,
     Chapter: 24,
     Author: "UnrivalArcaner",
-    Status: false,
+    Status: true,
     Genres: [
       {
         Id: 1,

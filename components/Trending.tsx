@@ -5,6 +5,10 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import { useState } from "react";
 import { Novels } from "../lib/store";
 import { useEmblaCarousel } from "embla-carousel/react";
+import Link from "next/link";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const TrendContainer = tw.div`
     w-full
@@ -36,27 +40,15 @@ const TrendButton = tw.div`
 
 `;
 
-const TrendSlickContainer = tw.div`
-    grid
-    grid-cols-5
-    gap-x-2
-
-    xl:grid-cols-5
-    xl:gap-x-4
-
-`;
-
 const SliderContainer = tw.div`
-    flex
-    px:2
     bg-black
-    h-full
-    py-16
-    font-semibold
-    items-center
+    px-10
+    py-8
 
 
-    xl:px-24
+    xl:py-20
+    xl:px-36
+
     
 `;
 
@@ -81,7 +73,8 @@ const ImageItem = tw.div`
 const ImageContent = tw.h4`
     text-xs
     text-white
-    mt-4
+    mt-2
+    ml-1
 
 
     xl:text-sm
@@ -92,7 +85,36 @@ export const Trending = () => {
   const [endIndex, setEndIndex] = useState<number>(5);
   const [animate, setAnimate] = useState(false);
   const [emblaRef] = useEmblaCarousel();
-
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <TrendContainer>
       <ButtonContainer>
@@ -102,43 +124,23 @@ export const Trending = () => {
         <TrendButton>Nhiều view</TrendButton>
       </ButtonContainer>
       <SliderContainer>
-        <ImageSliderContainer>
-          <ChevronLeftIcon
-            className="text-white font-semibold h-10 cursor-pointer mr-2"
-            onClick={() => {
-              if (startIndex >= 2) {
-                setStartIndex(startIndex - 1);
-                setEndIndex(endIndex - 1);
-              }
-            }}
-          />
-          <TrendSlickContainer className={`${animate === true ? "" : ""}`}>
-            {slides.map((slide) => {
-              if (slide.Id >= startIndex && slide.Id <= endIndex)
-                return (
-                  <ImageItem key={slide.Id}>
-                    <Image
-                      src={slide.Thumbnail}
-                      width={230}
-                      height={305}
-                      alt="/"
-                    />
-                    <ImageContent>{slide.Name}</ImageContent>
-                  </ImageItem>
-                );
-            })}
-          </TrendSlickContainer>
-          <ChevronRightIcon
-            className="text-white font-semibold h-10 cursor-pointer ml-2"
-            onClick={() => {
-              if (startIndex <= slides.length - 2) {
-                setStartIndex(startIndex + 1);
-                setEndIndex(endIndex + 1);
-                setAnimate(true);
-              }
-            }}
-          />
-        </ImageSliderContainer>
+        <Slider {...settings}>
+          {Novels.map((Novel) => {
+            return (
+              <div key={Novel.Id} className="min-w-min">
+                <Link href={`novel/${Novel.Id}`} passHref>
+                  <Image
+                    src={Novel.Thumbnail}
+                    width={240}
+                    height={305}
+                    alt="/"
+                  />
+                </Link>
+                <ImageContent>{Novel.Name}</ImageContent>
+              </div>
+            );
+          })}
+        </Slider>
       </SliderContainer>
     </TrendContainer>
   );

@@ -76,8 +76,9 @@ const SearchBar = tw.input`
 
   px-4
   py-2
-  w-64
+  w-44
   outline-none
+  sm:w-64
 
   rounded-3xl
   bg-gray-800

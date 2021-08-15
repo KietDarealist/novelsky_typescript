@@ -89,12 +89,13 @@ export const TrendingForDetail = () => {
                 if (slide.Id >= startIndex && slide.Id <= endIndex)
                   return (
                     <ImageItem key={slide.Id}>
-                      <Link href={`/detail/${slide.Id}`} passHref>
+                      <Link href={`/novel/${slide.Id}`} passHref>
                         <Image
                           src={slide.Thumbnail}
                           width={230}
                           height={305}
                           alt="/"
+                          className="cursor-pointer"
                         />
                       </Link>
                       <ImageContent>{slide.Name}</ImageContent>

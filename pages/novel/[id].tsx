@@ -64,12 +64,11 @@ const FollowButton = tw.button`
   rounded-2xl
   text-xs
   w-max
-  mt-4
+  
 
   xl:text-sm
   xl:px-3
   xl:py-2
-  xl:mt-10
 
 `;
 
@@ -123,12 +122,12 @@ const DetailBodyContainer = tw.div`
 `;
 
 const InfoContainer = tw.div`
-  cursor-pointer
+
 
 `;
 
 const ChapterContainer = tw.div`
-  cursor-pointer
+
 `;
 
 const SingleDetailPage: React.FC<Props> = ({ Novel }) => {
@@ -211,7 +210,7 @@ const SingleDetailPage: React.FC<Props> = ({ Novel }) => {
                   })}
                 </GenreContainer>
                 {/*Point and Rating*/}
-                <div className="flex justify-between items-center mt-4 mb-8 md:w-1/3 xl:mt-8 xl:mb-16 xl:w-1/2">
+                <div className="flex justify-between items-center h-28 md:w-1/3 xl:h-1/6 xl:mb-14 xl:w-1/2">
                   <div className="flex">
                     <StarIcon className="h-4 xl:h-5 text-orange" />
                     <StarIcon className="h-4 xl:h-5 text-orange" />

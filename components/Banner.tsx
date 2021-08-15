@@ -14,7 +14,6 @@ import { Genre, NovelType, Novels } from "../lib/store";
 export const BannerChildContainer = tw.div`
   flex
   flex-col
-  items-center
   h-full
   mx-auto
   w-full
@@ -47,6 +46,7 @@ xl:text-white
   xl:text-3xl
   xl:text-left
   xl:block
+  xl:h-1/5
 
 `;
 export const BannerViewsContainer = tw.div`
@@ -58,7 +58,6 @@ export const BannerViewsContainer = tw.div`
 
   md:w-1/3
   lg:w-1/3
-  xl:mt-10
   xl:w-2/3
 `;
 
@@ -99,14 +98,15 @@ export const GenreContainer = tw.div`
 
   md:flex
   md:w-2/5
+  md:h-16
   md:items-center
   md:justify-between
-  md:mt-4
 
 
   lg:w-1/3
-  xl:mt-10
+  lg:h-28
   xl:w-3/4
+  xl:h-1/6
 
 `;
 
@@ -115,17 +115,20 @@ export const DescriptionContainer = tw.h3`
 text-gray-100
   text-xs
   break-words
+  h-64
 
+  sm:h-44
+  
+  md:h-32
 
+  xl:h-2/5
   xl:text-sm
-  xl:mt-6
 `;
 
 export const ReadButton = tw.button`
   flex
   px-2
   py-1
-  mt-4
   text-xs
   items-center
 bg-orange
@@ -136,7 +139,6 @@ text-white
   md:flex
   md:px-2
   md:py-1
-  md:mt-4
   md:text-xs
   md:items-center
 md:bg-orange
@@ -147,7 +149,6 @@ md:text-white
 
   xl:px-4
   xl:py-2
-  xl:mt-10
   xl:text-sm
 
 
@@ -227,7 +228,7 @@ const Banner = () => {
 
           {/*Description*/}
           <DescriptionContainer>{data[index].Description}</DescriptionContainer>
-          <Link href={`/detail/${data[index].Id}`} passHref>
+          <Link href={`/novel/${data[index].Id}`} passHref>
             <ReadButton>
               Đọc ngay
               <ArrowRightIcon className="ml-2 h-5 font-semibold" />
