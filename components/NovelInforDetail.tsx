@@ -2,35 +2,38 @@ import React from "react";
 import tw from "tailwind-styled-components";
 import { ChevronDownIcon } from "@heroicons/react/outline";
 import { Genre } from "../lib/store";
+import Review from "../components/Review";
+import TrendingForDetail from "../components/TrendingForDetail";
+import Trending from "./Trending";
 
 interface Props {
   content: string;
   Genres: Genre[];
 }
 
-const DetailInfoContainer = tw.div`
+export const DetailInfoContainer = tw.div`
 
 `;
 
-const DetailNavContainer = tw.div`
-    flex
-    justify-between
-    items-center
-    w-full
-    text-sm
+export const DetailNavContainer = tw.div`
+  flex
+  justify-between
+  items-center
+  w-full
+  text-sm
 
-    md:w-1/2
-    md:text-lg
-    lg:w-1/3
-    xl:w-1/4
+  md:w-1/2
+  md:text-lg
+  lg:w-1/3
+  xl:w-1/4
 
 `;
 
-const DetailNavLabel = tw.h3`
-    text-lg
-    mb-10
+export const DetailNavLabel = tw.h3`
+  text-lg
+  cursor-pointer
 
-    xl:text-2xl
+  xl:text-2xl
 
 
 `;
@@ -40,14 +43,7 @@ const DetailContentContainer = tw.div`
 
 const NovelInforDetail: React.FC<Props> = ({ content, Genres }) => {
   return (
-    <DetailInfoContainer>
-      <DetailNavContainer>
-        <DetailNavLabel className="border-b-4 border-orange text-orange">
-          Thông tin
-        </DetailNavLabel>
-        <DetailNavLabel className="text-gray-300">Các chương</DetailNavLabel>
-      </DetailNavContainer>
-
+    <>
       <DetailContentContainer>
         <h4 className="text-lg text-gray-200 font-semibold mb-6">Nội dung</h4>
         <p className="text-sm text-gray-300 font-semibold mb-4 w-full xl:w-1/2">
@@ -74,7 +70,7 @@ const NovelInforDetail: React.FC<Props> = ({ content, Genres }) => {
           })}
         </div>
       </DetailContentContainer>
-    </DetailInfoContainer>
+    </>
   );
 };
 

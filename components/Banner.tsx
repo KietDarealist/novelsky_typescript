@@ -12,54 +12,54 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { Genre, NovelType, Novels } from "../lib/store";
 export const BannerChildContainer = tw.div`
-    flex
-    flex-col
-    items-center
-    h-full
-    mx-auto
-    w-full
-    mt-8
-    px-0
+  flex
+  flex-col
+  items-center
+  h-full
+  mx-auto
+  w-full
+  mt-8
+  px-0
 
-    md:flex-col
-    xl:flex-row
-    xl:w-5/6
-    xl:justify-between
-    xl:mt-20
-    xl:px-20
+  md:flex-col
+  xl:flex-row
+  xl:w-5/6
+  xl:justify-between
+  xl:mt-20
+  xl:px-20
 `;
 
 export const BannerContent = tw.div`
 
-    w-5/6
-    mx-auto
+  w-5/6
+  mx-auto
 
 
-    xl:w-1/2
+  xl:w-1/2
 `;
 
 export const BannerName = tw.h1`
-    hidden
+  hidden
 
 
-  xl:text-white
-    xl:font-semibold
-    xl:text-3xl
-    xl:text-left
-    xl:block
+xl:text-white
+  xl:font-semibold
+  xl:text-3xl
+  xl:text-left
+  xl:block
 
 `;
 export const BannerViewsContainer = tw.div`
-    flex
-    items-center
-    justify-between
-    w-5/6
-    mt-4
+  flex
+  items-center
+  justify-between
+  w-5/6
+  mt-4
 
-    md:w-1/3
-    lg:w-1/3
-    xl:mt-10
-    xl:w-2/3
+  md:w-1/3
+  lg:w-1/3
+  xl:mt-10
+  xl:w-2/3
 `;
 
 export const BannerViewsItem = tw.div`
@@ -79,46 +79,46 @@ export const BannerViewsContent = tw.p`
 export const GenreButton = tw.button`
   bg-darkRed
   text-lightRed
-    rounded-xl
-    px-1
-    py-1
-    text-xs
-    w-16
+  rounded-xl
+  px-1
+  py-1
+  text-xs
+  w-max
 
 
 
-    xl:text-sm
-    xl:w-20
-    xl:px-2
+  xl:text-sm
+  xl:px-2
+  xl:w-24
 `;
 
 export const GenreContainer = tw.div`
-    hidden
+  hidden
 
 
 
-    md:flex
-    md:w-1/3
-    md:items-center
-    md:justify-between
-    md:mt-4
+  md:flex
+  md:w-2/5
+  md:items-center
+  md:justify-between
+  md:mt-4
 
 
-    lg:w-1/3
-    xl:mt-10
-    xl:w-2/3
+  lg:w-1/3
+  xl:mt-10
+  xl:w-3/4
 
 `;
 
 export const DescriptionContainer = tw.h3`
-    mt-2
-    text-gray-100
-    text-xs
-    break-words
+  mt-2
+text-gray-100
+  text-xs
+  break-words
 
 
-    xl:text-sm
-    xl:mt-6
+  xl:text-sm
+  xl:mt-6
 `;
 
 export const ReadButton = tw.button`
@@ -133,50 +133,50 @@ text-white
   font-semibold
   rounded-3xl
 
-    md:flex
-    md:px-2
-    md:py-1
-    md:mt-4
-    md:text-xs
-    md:items-center
-    md:bg-orange
-    md:text-white
-    md:font-semibold
-    md:rounded-3xl
+  md:flex
+  md:px-2
+  md:py-1
+  md:mt-4
+  md:text-xs
+  md:items-center
+md:bg-orange
+md:text-white
+  md:font-semibold
+  md:rounded-3xl
 
 
-    xl:px-4
-    xl:py-2
-    xl:mt-10
-    xl:text-sm
+  xl:px-4
+  xl:py-2
+  xl:mt-10
+  xl:text-sm
 
 
 `;
 
 const ThumbnailContainer = tw.div`
-    mt-6
-    grid
-    grid-cols-5
-    px-8
-    mx-auto
-    gap-x-1
+  mt-6
+  grid
+  grid-cols-5
+  px-8
+  mx-auto
+  gap-x-1
 
-    md:px-20
-    md:gap-x-4
-    xl:px-20
-    xl:w-5/6
-    xl:gap-x-4
-    xl:mt-16
+  md:px-20
+  md:gap-x-4
+  xl:px-20
+  xl:w-5/6
+  xl:gap-x-2
+  xl:mt-16
 
 `;
 const ThumbnailItem = tw.div`
-    flex
-    cursor-pointer
-    object-cover
-    h-full
+  flex
+  cursor-pointer
+  object-cover
+  h-full
 
-    lg:w-max
-    xl:w-max
+  lg:w-max
+  xl:w-max
 
 
     

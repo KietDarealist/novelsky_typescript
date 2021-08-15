@@ -5,6 +5,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import { useState } from "react";
 import { Novels } from "../lib/store";
 import { useEmblaCarousel } from "embla-carousel/react";
+import Link from "next/link";
 
 const TrendContainer = tw.div`
     w-full
@@ -88,12 +89,14 @@ export const TrendingForDetail = () => {
                 if (slide.Id >= startIndex && slide.Id <= endIndex)
                   return (
                     <ImageItem key={slide.Id}>
-                      <Image
-                        src={slide.Thumbnail}
-                        width={230}
-                        height={305}
-                        alt="/"
-                      />
+                      <Link href={`/detail/${slide.Id}`} passHref>
+                        <Image
+                          src={slide.Thumbnail}
+                          width={230}
+                          height={305}
+                          alt="/"
+                        />
+                      </Link>
                       <ImageContent>{slide.Name}</ImageContent>
                     </ImageItem>
                   );

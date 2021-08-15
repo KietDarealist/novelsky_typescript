@@ -7,23 +7,13 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { FlagIcon } from "@heroicons/react/solid";
+import Chapter from "../../components/Chapter";
 
 //Import Data
 import { Novels, NovelType } from "../../lib/store";
 
 //Import Components....
-import {
-  MainContainer,
-  HeroSection,
-  HamMenu,
-  Header,
-  HeaderLeft,
-  HeaderRight,
-  NavItem,
-  LoginButton,
-  LogOutButton,
-  MobileContainer,
-} from "../index";
+import { MainContainer, HeroSection } from "../index";
 import {
   BannerChildContainer,
   BannerContent,
@@ -33,11 +23,17 @@ import {
   DescriptionContainer,
   ReadButton,
 } from "../../components/Banner";
+import {
+  DetailInfoContainer,
+  DetailNavLabel,
+  DetailNavContainer,
+} from "../../components/NovelInforDetail";
 import Footer from "../../components/Footer";
 import NovelInforDetail from "../../components/NovelInforDetail";
 import TrendingForDetail from "../../components/TrendingForDetail";
 import Review from "../../components/Review";
 import { RateContainer } from "../../components/Review";
+import Header from "../../components/Header";
 
 //Import Images and Logo
 import Ham from "../../images/Hambuger.png";
@@ -126,8 +122,20 @@ const DetailBodyContainer = tw.div`
 
 `;
 
+const InfoContainer = tw.div`
+  cursor-pointer
+
+`;
+
+const ChapterContainer = tw.div`
+  cursor-pointer
+`;
+
 const SingleDetailPage: React.FC<Props> = ({ Novel }) => {
   const [ham, setHam] = useState(false);
+
+  const [chapterOn, setChapterOn] = useState(false);
+
   return (
     <>
       <Head>
@@ -142,97 +150,9 @@ const SingleDetailPage: React.FC<Props> = ({ Novel }) => {
           {/*Hero Section including Header and Banner*/}
           <HeroSection className={styles.maincontain}>
             {/*HeaderContainer*/}
-            <Header>
-              {/*For  Mobile*/}
-              <MobileContainer>
-                <Image
-                  src={Ham}
-                  className="flex lg:hidden cursor-pointer"
-                  width={26}
-                  height={26}
-                  alt="/"
-                  onClick={() => setHam(true)}
-                />
-                <Link href="/" passHref>
-                  <Image src={Logo} width={70} height={20} alt="/" />
-                </Link>
-              </MobileContainer>
-              <HamMenu
-                className={`${
-                  ham === true ? "flex flex-col pl-4 pt-4" : "hidden"
-                }`}
-              >
-                <NavItem className="mb-4">
-                  <p className="text-sm font-semibold text-white hover:text-red-500">
-                    Thể loại
-                  </p>
-                </NavItem>
-                <NavItem className="mb-4">
-                  <p className="text-sm font-semibold text-white hover:text-red-500">
-                    Sáng tác
-                  </p>
-                </NavItem>
-                <NavItem className="mb-4">
-                  <p className="text-sm font-semibold text-white hover:text-red-500">
-                    Thư viện
-                  </p>
-                </NavItem>
-                <NavItem className="mb-4">
-                  <p className="text-sm font-semibold text-white hover:text-red-500">
-                    Đăng nhập
-                  </p>
-                </NavItem>
-                <NavItem className="mb-4">
-                  <p className="text-sm font-semibold text-white hover:text-red-500">
-                    Đăng ký
-                  </p>
-                </NavItem>
-                <Link href="/" passHref>
-                  <NavItem className="mb-4">
-                    <p className="text-sm font-semibold text-white hover:text-red-500">
-                      Quay lại
-                    </p>
-                  </NavItem>
-                </Link>
-                <NavItem
-                  className="mb-4 items-center"
-                  onClick={() => setHam(false)}
-                >
-                  <XIcon className="h-4 text-white text-sm hover:text-red-500" />
-                </NavItem>
-              </HamMenu>
-              {/*End Mobile Menu*/}
 
-              {/*For Desktop*/}
-              {/*Letf of Header*/}
-              <HeaderLeft>
-                <Image src={Logo} width={144} height={40} alt="/" />
-                <NavItem>
-                  <p className="text-sm font-semibold text-white">Thể loại</p>
-                  <ChevronDownIcon className="h-5 text-white font-semibold ml-2" />
-                </NavItem>
-                <NavItem>
-                  <p className="text-sm font-semibold text-white">Sáng tác</p>
-                </NavItem>
-                <NavItem>
-                  <p className="text-sm font-semibold text-white">Thư viện</p>
-                </NavItem>
-              </HeaderLeft>
+            <Header />
 
-              {/*Right of Header*/}
-              <HeaderRight>
-                <NavItem>
-                  <p className="text-sm font-semibold text-white">Thể loại</p>
-                  <SearchIcon className="h-5 text-white font-semibold ml-2" />
-                </NavItem>
-                <NavItem>
-                  <LoginButton>Đăng nhập</LoginButton>
-                </NavItem>
-                <NavItem>
-                  <LogOutButton>Đăng kí</LogOutButton>
-                </NavItem>
-              </HeaderRight>
-            </Header>
             {/*End of Header*/}
 
             {/*Adding Banner Component*/}
@@ -327,19 +247,54 @@ const SingleDetailPage: React.FC<Props> = ({ Novel }) => {
 
           {/*Add NovelInfoDetail Component*/}
           <DetailBodyContainer>
-            <NovelInforDetail
-              content={Novel.Description}
-              Genres={Novel.Genres}
-            />
+            <DetailInfoContainer>
+              <DetailNavContainer>
+                <DetailNavLabel
+                  className={`${
+                    chapterOn === false
+                      ? "border-b-4 border-orange text-orange"
+                      : "text-gray-300"
+                  }`}
+                  onClick={() => setChapterOn(false)}
+                >
+                  Thông tin
+                </DetailNavLabel>
+                <DetailNavLabel
+                  className={`${
+                    chapterOn === true
+                      ? "border-b-4 border-orange text-orange"
+                      : "text-gray-300"
+                  }`}
+                  onClick={() => setChapterOn(true)}
+                >
+                  Các chương
+                </DetailNavLabel>
+              </DetailNavContainer>
+            </DetailInfoContainer>
           </DetailBodyContainer>
 
-          {/*Add Trending Container*/}
-          <TrendingForDetail />
+          <InfoContainer
+            className={`${chapterOn === false ? "block" : "hidden"}`}
+          >
+            <DetailBodyContainer>
+              <NovelInforDetail
+                content={Novel.Description}
+                Genres={Novel.Genres}
+              />
+            </DetailBodyContainer>
+            {/*Add Trending Container*/}
+            <TrendingForDetail />
+            {/*Add Review Component*/}
+            <DetailBodyContainer>
+              <Review />
+            </DetailBodyContainer>
+          </InfoContainer>
 
-          {/*Add Review Component*/}
-          <DetailBodyContainer>
-            <Review />
-          </DetailBodyContainer>
+          <ChapterContainer className={`${chapterOn === true ? "" : "hidden"}`}>
+            <DetailBodyContainer>
+              <Chapter id={Novel.Id} />
+            </DetailBodyContainer>
+          </ChapterContainer>
 
           {/*Add Footer*/}
           <Footer />
