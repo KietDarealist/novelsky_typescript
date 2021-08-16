@@ -182,7 +182,7 @@ const Chapter: React.FC<Props> = ({ id }) => {
           <SearchBarContainer>
             <div></div>
             <div className="flex items-center">
-              <SearchBar placeholder={`Tìm kiếm`} />
+              <SearchBar placeholder={`Tìm kiếm`} className="text-gray-100" />
               <SearchIcon className="h-4 xl:h-6  font-semibold text-gray-300 z-10 right-8 relative" />
             </div>
           </SearchBarContainer>

@@ -36,8 +36,45 @@
   background-color: rgba(250, 49, 9, 0.75);
 }
 
-@media only screen and (max-width: 800px) {
+.limittext {
+  color: rgba(171, 165, 171, 1);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 650px;
+  line-height: 17px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding-top: 15px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .limittext {
+    font-size: 16px;
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .limittext {
+    font-size: 16px;
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .limittext {
+    font-size: 16px;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
   .maincontain {
     background: #1c1c1c;
+  }
+  .limittext {
+    width: 100px;
+    font-size: 12px;
   }
 }

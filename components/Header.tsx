@@ -99,12 +99,10 @@ export const MobileContainer = tw.div`
   flex
   w-3/5
   justify-between
-  lg:hidden
-  pl-4
-
-
-
+  
   md:w-1/2
+
+  lg:hidden
 `;
 
 const Header = () => {
@@ -193,7 +191,6 @@ const Header = () => {
       {/*Right of Header*/}
       <HeaderRight>
         <NavItem>
-          <p className="text-sm font-semibold text-white">Thể loại</p>
           <SearchIcon className="h-5 text-white font-semibold ml-2" />
         </NavItem>
         <NavItem>

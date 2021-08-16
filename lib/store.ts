@@ -27,6 +27,7 @@ export interface NovelType {
   Status: boolean;
   Genres: Genre[];
   Chapters: ChapterType[];
+  Rate: number;
 }
 
 export const Novels: NovelType[] = [
@@ -120,6 +121,7 @@ export const Novels: NovelType[] = [
         Title: "System Activated, Fusion Initiated",
       },
     ],
+    Rate: 4,
   },
   {
     Id: 1,
@@ -266,6 +268,7 @@ export const Novels: NovelType[] = [
         Title: "Reunited",
       },
     ],
+    Rate: 5,
   },
   {
     Id: 2,
@@ -409,6 +412,7 @@ export const Novels: NovelType[] = [
         Title: "Chapter 27",
       },
     ],
+    Rate: 3,
   },
   {
     Id: 3,
@@ -520,6 +524,7 @@ export const Novels: NovelType[] = [
         Title: "Boss Fight",
       },
     ],
+    Rate: 4,
   },
   {
     Id: 4,
@@ -643,6 +648,7 @@ export const Novels: NovelType[] = [
         Title: "The Lady in White",
       },
     ],
+    Rate: 5,
   },
   {
     Id: 5,
@@ -728,5 +734,6 @@ export const Novels: NovelType[] = [
         Title: "Hatred",
       },
     ],
+    Rate: 2,
   },
 ];
