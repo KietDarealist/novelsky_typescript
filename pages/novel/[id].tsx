@@ -7,7 +7,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { FlagIcon } from "@heroicons/react/solid";
-import Chapter from "../../components/Chapter";
+import Chapter from "../../components/search/Chapter";
 
 //Import Data
 import { Novels, NovelType } from "../../lib/store";
@@ -20,30 +20,24 @@ import {
   BannerName,
   GenreButton,
   GenreContainer,
-  DescriptionContainer,
   ReadButton,
-} from "../../components/Banner";
+} from "../../components/home/Banner";
 import {
   DetailInfoContainer,
   DetailNavLabel,
   DetailNavContainer,
-} from "../../components/NovelInforDetail";
-import Footer from "../../components/Footer";
-import NovelInforDetail from "../../components/NovelInforDetail";
-import TrendingForDetail from "../../components/TrendingForDetail";
-import Review from "../../components/Review";
-import { RateContainer } from "../../components/Review";
-import Header from "../../components/Header";
+} from "../../components/detail/NovelInforDetail";
+import Footer from "../../components/home/Footer";
+import NovelInforDetail from "../../components/detail/NovelInforDetail";
+import Review from "../../components/detail/Review";
+import Header from "../../components/home/Header";
 
-//Import Images and Logo
-import Ham from "../../images/Hambuger.png";
-import { SearchIcon, ChevronDownIcon, XIcon } from "@heroicons/react/outline";
 import { StarIcon } from "@heroicons/react/solid";
-import Logo from "../../images/NovelSky.png";
 import { DocumentTextIcon, EyeIcon } from "@heroicons/react/outline";
 
 //Import styles
 import styles from "../../styles/Home.module.css";
+import SliderComponent from "../../components/home/Slider";
 
 //Interface for Props type
 interface Props {
@@ -281,8 +275,8 @@ const SingleDetailPage: React.FC<Props> = ({ Novel }) => {
                 Genres={Novel.Genres}
               />
             </DetailBodyContainer>
-            {/*Add Trending Container*/}
-            <TrendingForDetail />
+            {/*Add Slider*/}
+            <SliderComponent label={"Truyện cùng tác giả"} content={true} />
             {/*Add Review Component*/}
             <DetailBodyContainer>
               <Review />

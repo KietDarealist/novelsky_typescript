@@ -2,8 +2,8 @@ import React from "react";
 import tw from "tailwind-styled-components";
 import { StarIcon } from "@heroicons/react/solid";
 import { FlagIcon } from "@heroicons/react/solid";
-import LikeIcon from "../lib/icon";
-import Avt from "../images/Avt.png";
+import LikeIcon from "../../lib/icon";
+import Avt from "../../images/Avt.png";
 import Image from "next/image";
 
 const ReviewMainContainer = tw.div`

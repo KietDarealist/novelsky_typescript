@@ -1,11 +1,11 @@
 import React from "react";
 import tw from "tailwind-styled-components";
-import Header from "../../components/Header";
+import Header from "../../components/home/Header";
 import Head from "next/head";
 import { ChevronRightIcon, SearchIcon } from "@heroicons/react/outline";
 import TagFouned from "../../components/search/TagFouned";
 import { useState } from "react";
-import Footer from "../../components/Footer";
+import Footer from "../../components/home/Footer";
 
 const MainSearchContainer = tw.div`
     w-full

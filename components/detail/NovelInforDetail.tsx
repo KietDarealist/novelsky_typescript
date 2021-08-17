@@ -1,10 +1,12 @@
+//Import dependencies
 import React from "react";
 import tw from "tailwind-styled-components";
+
+//Import GenreType
+import { Genre } from "../../lib/store";
+
+//Import icon
 import { ChevronDownIcon } from "@heroicons/react/outline";
-import { Genre } from "../lib/store";
-import Review from "../components/Review";
-import TrendingForDetail from "../components/TrendingForDetail";
-import Trending from "./Trending";
 
 interface Props {
   content: string;
@@ -41,15 +43,32 @@ export const DetailNavLabel = tw.h3`
 const DetailContentContainer = tw.div`
 `;
 
+const DetailContentDescriptionLabel = tw.h4`
+  text-lg
+  text-gray-200
+  font-semibold
+  mb-6
+`;
+
+const DetailContentDescription = tw.p`
+  text-sm
+  text-gray-300
+  font-semibold
+  mb-4
+  w-full
+
+  xl:w-1/2
+`;
+
 const NovelInforDetail: React.FC<Props> = ({ content, Genres }) => {
   return (
     <>
       <DetailContentContainer>
-        <h4 className="text-lg text-gray-200 font-semibold mb-6">Nội dung</h4>
-        <p className="text-sm text-gray-300 font-semibold mb-4 w-full xl:w-1/2">
+        <DetailContentDescriptionLabel>Nội dung</DetailContentDescriptionLabel>
+        <DetailContentDescription className="text-sm text-gray-300 font-semibold mb-4 w-full xl:w-1/2">
           {" "}
           {content}
-        </p>
+        </DetailContentDescription>
         <div className="flex items-center mb-6">
           <p className="text-sm text-gray-200 font-semibold mb-2 mr-2">
             Xem thêm

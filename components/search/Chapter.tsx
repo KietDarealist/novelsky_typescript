@@ -1,11 +1,9 @@
 import React from "react";
 import tw from "tailwind-styled-components";
-import { Novels, NovelType, Genre } from "../lib/store";
+import { Novels, NovelType, Genre } from "../../lib/store";
 import { SearchIcon } from "@heroicons/react/outline";
 
 const ChapterMainContainer = tw.div`
-
-
 `;
 
 const LatestChapterContainer = tw.div`
@@ -53,16 +51,11 @@ const ChaptersDisplayContainer = tw.div``;
 
 const ChapterSearchingContainer = tw.div`
   
-
   my-5
-
-
 
   md:my-8
   xl:my-16
 
-
- 
 `;
 
 const SearchBarContainer = tw.div`

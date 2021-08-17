@@ -5,8 +5,8 @@ import Link from "next/link";
 
 //Import icons and images
 import { SearchIcon, ChevronDownIcon, XIcon } from "@heroicons/react/outline";
-import Logo from "../images/NovelSky.png";
-import Ham from "../images/Hambuger.png";
+import Logo from "../../images/NovelSky.png";
+import Ham from "../../images/Hambuger.png";
 import { useState } from "react";
 
 export const HamMenu = tw.div`

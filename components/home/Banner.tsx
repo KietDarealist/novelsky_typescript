@@ -1,5 +1,4 @@
 import React from "react";
-import Thumbnail from "../images/Thumbnail.png";
 import { useState } from "react";
 import tw from "tailwind-styled-components";
 import Image from "next/image";
@@ -8,9 +7,9 @@ import {
   EyeIcon,
   ArrowRightIcon,
 } from "@heroicons/react/outline";
-import styles from "../styles/Home.module.css";
 import Link from "next/link";
-import { Genre, NovelType, Novels } from "../lib/store";
+import { Novels } from "../../lib/store";
+
 export const BannerChildContainer = tw.div`
   flex
   flex-col
@@ -29,7 +28,6 @@ export const BannerChildContainer = tw.div`
 `;
 
 export const BannerContent = tw.div`
-
   w-5/6
   mx-auto
 
@@ -62,16 +60,16 @@ export const BannerViewsContainer = tw.div`
 `;
 
 export const BannerViewsItem = tw.div`
-    flex
-    items-center
+  flex
+  items-center
 `;
 
 export const BannerViewsContent = tw.p`
-  text-white
-    font-semibold
-    text-xs
+text-white
+  font-semibold
+  text-xs
 
-    xl:text-sm
+  xl:text-sm
 
 `;
 
@@ -186,8 +184,6 @@ const ThumbnailItem = tw.div`
 const Banner = () => {
   const [data, setData] = useState(Novels);
   const [index, setIndex] = useState<number>(0);
-  const [status, setStatus] = useState<number>(0);
-
   return (
     <>
       <BannerChildContainer>

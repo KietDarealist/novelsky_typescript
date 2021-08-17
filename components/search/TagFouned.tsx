@@ -2,17 +2,13 @@ import React from "react";
 import tw from "tailwind-styled-components/dist/tailwind";
 import { Novels } from "../../lib/store";
 import Image from "next/image";
-import { GenreButton } from "../Banner";
+import { GenreButton } from "../home/Banner";
 import { StarIcon } from "@heroicons/react/solid";
 import styles from "../../styles/Home.module.css";
 import { useState, useEffect } from "react";
 
 const TagFoundedContainer = tw.div`
   mt-10
-
-  
- 
-
 
   xl:mt-10
 
@@ -71,39 +67,39 @@ const TagFoundedThumbnailItem = tw.div`
 `;
 
 const FoundedList = tw.div`
-    mt-6
+  mt-6
     
 
-    md:mt-8
+  md:mt-8
 
 
-    xl:mt-10
+  xl:mt-10
 `;
 
 const FoundedListItem = tw.div`
 
-    flex
-    items-center
-    w-full
+  flex
+  items-center
+  w-full
 
 
-    my-2
+  my-2
 
-    md:my-3
+  md:my-3
 
-    lg:my-4
+  lg:my-4
 
-    xl:my-5
+  xl:my-5
 `;
 
 const FoundedListContent = tw.div`
     
-    w-1/2
+  w-1/2
 
-    ml-2
-    md:ml-4 
-    lg:ml-8 
-    xl:ml-10
+  ml-2
+  md:ml-4 
+  lg:ml-8 
+  xl:ml-10
    
 `;
 

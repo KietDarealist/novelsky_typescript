@@ -10,7 +10,7 @@ module.exports = {
       transparent: "transparent",
       line: " #3F3F3F",
       current: "currentColor",
-      black: "rgba(11, 11, 11, 1)",
+      black: "#0B0B0B",
       secondary: "#1C1C1C",
       white: colors.white,
       darkRed: "rgba(69, 25, 15, 1)",
