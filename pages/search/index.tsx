@@ -8,61 +8,58 @@ import { useState } from "react";
 import Footer from "../../components/home/Footer";
 
 const MainSearchContainer = tw.div`
-    w-full
-    bg-secondary
-    pt-5
-    px-4
-    py-2
+  w-full
+bg-secondary
+  px-4
+  py-2
 `;
 
-const DirectionContainer = tw.div`
+export const DirectionContainer = tw.div`
   flex
-  justify-between
   items-center
-  w-full
+  w-max
   
   px-4
-  mt-10
 
-  sm:w-3/4
 
-  md:w-1/2
+
+
   md:px-8
 
-  lg:w-96
+
   lg:px-16
 
-  xl:w-2/5
+
   xl:px-36
 `;
 
-const DirectionItem = tw.div`
+export const DirectionItem = tw.div`
   flex
   text-gray-100
   text-xs
   font-semibold
 
-  md:text-sm
+
 `;
 
 const SearchBodyContainer = tw.div`
-    mt-10
-    px-4
+  mt-10
+  px-4
 
-    md:px-20
+  md:px-20
 
-    lg:px-40
+  lg:px-40
 
-    xl:px-80
-    xl:mt-10
+  xl:px-80
+  xl:mt-10
 `;
 
 const SearchInput = tw.input`
-    w-full
-    mx-auto
-    outline-none
+  w-full
+  mx-auto
+  outline-none
     
-    xl:h-12
+  xl:h-12
 
 
 `;
@@ -88,9 +85,9 @@ const SearchPage = () => {
         <Header />
         <DirectionContainer>
           <DirectionItem>Trang chủ</DirectionItem>
-          <ChevronRightIcon className="h-3 xl:h-4 text-gray-100 font-semibold" />
+          <ChevronRightIcon className="h-3 xl:h-4 text-gray-100 font-semibold mx-3.5" />
           <DirectionItem>Tìm kiếm</DirectionItem>
-          <ChevronRightIcon className="h-3 xl:h-4 text-gray-100 font-semibold" />
+          <ChevronRightIcon className="h-3 xl:h-4 text-gray-100 font-semibold mx-3.5" />
           <DirectionItem>Từ khóa {input}</DirectionItem>
         </DirectionContainer>
         <SearchBodyContainer>

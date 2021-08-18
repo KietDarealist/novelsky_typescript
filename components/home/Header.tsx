@@ -28,6 +28,7 @@ const HeaderContainer = tw.div`
   flex
   items-center
   justify-between
+  py-8
 
   px-4
 
@@ -97,10 +98,11 @@ export const LogOutButton = tw.button`
 
 export const MobileContainer = tw.div`
   flex
-  w-3/5
   justify-between
+  items-center
+  w-full
   
-  md:w-1/2
+
 
   lg:hidden
 `;
@@ -121,6 +123,10 @@ const Header = () => {
         />
         <Link href="/" passHref>
           <Image src={Logo} width={70} height={20} alt="/" />
+        </Link>
+
+        <Link href="/search" passHref>
+          <SearchIcon className="h-6 text-white font-semibold ml-2 cursor-pointer" />
         </Link>
       </MobileContainer>
       <HamMenu
@@ -177,7 +183,9 @@ const Header = () => {
           />
         </Link>
         <NavItem>
-          <p className="text-sm font-semibold text-white">Thể loại</p>
+          <Link href="/kind" passHref>
+            <p className="text-sm font-semibold text-white">Thể loại</p>
+          </Link>
           <ChevronDownIcon className="h-5 text-white font-semibold ml-2" />
         </NavItem>
         <NavItem>
@@ -191,7 +199,9 @@ const Header = () => {
       {/*Right of Header*/}
       <HeaderRight>
         <NavItem>
-          <SearchIcon className="h-5 text-white font-semibold ml-2" />
+          <Link href="/search" passHref>
+            <SearchIcon className="h-5 text-white font-semibold ml-2 cursor-pointer" />
+          </Link>
         </NavItem>
         <NavItem>
           <LoginButton>Đăng nhập</LoginButton>

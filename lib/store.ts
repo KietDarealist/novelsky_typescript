@@ -9,6 +9,7 @@ import Thumbnail from "../images/Thumbnail.png";
 export interface Genre {
   Id: number;
   Text: string;
+  Type: string;
 }
 
 export interface ChapterType {
@@ -30,6 +31,59 @@ export interface NovelType {
   Rate: number;
 }
 
+export const Categories: Genre[] = [
+  {
+    Id: 1,
+    Text: "Action",
+    Type: "Men",
+  },
+  {
+    Id: 2,
+    Text: "Fantasy",
+    Type: "Men",
+  },
+  {
+    Id: 3,
+    Text: "Realistic",
+    Type: "Men",
+  },
+  {
+    Id: 4,
+    Text: "Game",
+    Type: "Men",
+  },
+  {
+    Id: 5,
+    Text: "History",
+    Type: "Men",
+  },
+  {
+    Id: 6,
+    Text: "Romance",
+    Type: "Men",
+  },
+  {
+    Id: 7,
+    Text: "Hornor",
+    Type: "Men",
+  },
+  {
+    Id: 8,
+    Text: "Virtual",
+    Type: "Men",
+  },
+  {
+    Id: 9,
+    Text: "Sport",
+    Type: "Men",
+  },
+  {
+    Id: 11,
+    Text: "Romance",
+    Type: "Women",
+  },
+];
+
 export const Novels: NovelType[] = [
   {
     Id: 0,
@@ -45,14 +99,17 @@ export const Novels: NovelType[] = [
       {
         Id: 1,
         Text: "Drama",
+        Type: "Women",
       },
       {
         Id: 2,
         Text: "Fanstatic",
+        Type: "Men",
       },
       {
         Id: 3,
         Text: "Romance",
+        Type: "Women",
       },
     ],
     Chapters: [
@@ -136,18 +193,22 @@ export const Novels: NovelType[] = [
       {
         Id: 1,
         Text: "System",
+        Type: "Men",
       },
       {
         Id: 2,
         Text: "Video Game",
+        Type: "Men",
       },
       {
         Id: 3,
         Text: "Game",
+        Type: "Men",
       },
       {
         Id: 4,
         Text: "Fantasy",
+        Type: "Men",
       },
     ],
     Chapters: [
@@ -284,18 +345,22 @@ export const Novels: NovelType[] = [
       {
         Id: 1,
         Text: "Fantasy",
+        Type: "Men",
       },
       {
         Id: 2,
         Text: "Space",
+        Type: "Men",
       },
       {
         Id: 3,
         Text: "Action",
+        Type: "Men",
       },
       {
         Id: 4,
         Text: "Adventure",
+        Type: "Men",
       },
     ],
     Chapters: [
@@ -428,18 +493,17 @@ export const Novels: NovelType[] = [
       {
         Id: 1,
         Text: "Fanstatic",
+        Type: "Men",
       },
       {
         Id: 2,
         Text: "Adventure",
-      },
-      {
-        Id: 3,
-        Text: "Romance",
+        Type: "Men",
       },
       {
         Id: 4,
         Text: "Action",
+        Type: "Men",
       },
     ],
     Chapters: [
@@ -540,14 +604,17 @@ export const Novels: NovelType[] = [
       {
         Id: 1,
         Text: "Video Game",
+        Type: "Men",
       },
       {
         Id: 2,
         Text: "Sword",
+        Type: "Men",
       },
       {
         Id: 3,
         Text: "Adventure",
+        Type: "Men",
       },
     ],
     Chapters: [
@@ -666,14 +733,17 @@ export const Novels: NovelType[] = [
       {
         Id: 1,
         Text: "Harem",
+        Type: "Women",
       },
       {
         Id: 2,
         Text: "Action",
+        Type: "Men",
       },
       {
         Id: 3,
         Text: "R18",
+        Type: "Both",
       },
     ],
     Chapters: [

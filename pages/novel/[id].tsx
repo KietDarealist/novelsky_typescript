@@ -26,10 +26,10 @@ import {
   DetailInfoContainer,
   DetailNavLabel,
   DetailNavContainer,
-} from "../../components/detail/NovelInforDetail";
+} from "../../components/novel/NovelInforDetail";
 import Footer from "../../components/home/Footer";
-import NovelInforDetail from "../../components/detail/NovelInforDetail";
-import Review from "../../components/detail/Review";
+import NovelInforDetail from "../../components/novel/NovelInforDetail";
+import Review from "../../components/novel/Review";
 import Header from "../../components/home/Header";
 
 import { StarIcon } from "@heroicons/react/solid";

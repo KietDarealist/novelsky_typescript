@@ -16,7 +16,7 @@
 }
 
 .maincontain {
-  background: url("../images//BlurBg.png");
+  background-color: #1c1c1c;
   height: fit-content;
 
   /* Center and scale the image nicely */
@@ -47,34 +47,60 @@
   -webkit-box-orient: vertical;
   padding-top: 15px;
 }
+.limittext2 {
+  color: rgba(171, 165, 171, 1);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 300px;
+  line-height: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding-top: 15px;
+  font-size: 12.9px;
+}
 
 @media only screen and (max-width: 1280px) {
   .limittext {
     font-size: 16px;
-    width: 300px;
+    width: 250px;
+  }
+  .limittext2 {
+    font-size: 12.9px;
+    width: 180px;
   }
 }
 
 @media only screen and (max-width: 1023px) {
   .limittext {
     font-size: 16px;
-    width: 250px;
+    width: 200px;
+  }
+  .limittext2 {
+    font-size: 12.9px;
+    width: 130px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .limittext {
     font-size: 16px;
-    width: 200px;
+    width: 100px;
+  }
+  .limittext2 {
+    font-size: 12.9px;
+    width: 100px;
   }
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 410px) {
   .maincontain {
     background: #1c1c1c;
   }
   .limittext {
-    width: 100px;
-    font-size: 12px;
+    display: none;
+  }
+  .limittext2 {
+    width: 80px;
   }
 }

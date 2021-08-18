@@ -3,6 +3,7 @@ import tw from "tailwind-styled-components";
 import FooterLogo from "../../images/NovelSkyFooter.png";
 import Image from "next/image";
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
+import Link from "next/link";
 
 const FooterContainer = tw.div`
 bg-black
@@ -62,6 +63,7 @@ text-gray-300
   block
   min-w-max
   mr-2
+  cursor-pointer
 
 
   xl:flex
@@ -92,7 +94,9 @@ const Footer = () => {
         <FooterContent>
           <FooterContentItem>Thể loại</FooterContentItem>
           <FooterContentItem>Về chúng tôi</FooterContentItem>
-          <FooterContentItem>Điều khoản sử dụng</FooterContentItem>
+          <Link href="/term" passHref>
+            <FooterContentItem>Điều khoản sử dụng</FooterContentItem>
+          </Link>
           <FooterContentItem>Chính sách bảo mật</FooterContentItem>
           <FooterContentItem>Quyền lợi</FooterContentItem>
           <FooterContentItem>Về bản quyền</FooterContentItem>

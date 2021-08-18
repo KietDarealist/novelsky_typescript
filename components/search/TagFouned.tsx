@@ -78,6 +78,7 @@ const FoundedList = tw.div`
 
 const FoundedListItem = tw.div`
 
+  
   flex
   items-center
   w-full

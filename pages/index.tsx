@@ -21,7 +21,6 @@ export const MainContainer = tw.div`
 
 export const HeroSection = tw.div`
   w-full
-  py-5
 `;
 
 const NavOnSlider = tw.div`

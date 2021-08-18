@@ -4,9 +4,10 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Novels } from "../../lib/store";
 import Link from "next/link";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import Slider from "react-slick";
+import { AppProps } from "next/app";
+import styles from "./Slider.module.css";
 
 const SliderMainContainer = tw.div`
   w-full
@@ -65,6 +66,17 @@ text-white
 interface Props {
   label: string;
   content: boolean;
+}
+
+interface styletype {
+  display: string;
+  background: string;
+}
+
+interface ArrowProps {
+  className: string;
+  style: styletype;
+  onClick: React.MouseEventHandler;
 }
 
 export const SliderComponent: React.FC<Props> = ({ label, content }) => {
